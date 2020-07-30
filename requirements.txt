@@ -1,5 +1,6 @@
 setuptools
 wheel
+pypandoc==1.5
 pyspark==2.4.5
 pyarrow==0.17.1
 mlflow==1.8.0

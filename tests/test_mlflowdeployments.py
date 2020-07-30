@@ -5,7 +5,7 @@ from databrickslabs_cicdtemplates import cluster_and_libraries
 from databrickslabs_cicdtemplates import deployment
 import unittest
 
-from deployment import check_if_dir_is_pipeline_def
+from databrickslabs_cicdtemplates.deployment import check_if_dir_is_pipeline_def
 
 
 class TestMlflowDeployments(unittest.TestCase):

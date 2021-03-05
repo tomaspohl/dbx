@@ -1,3 +1,4 @@
+import os
 import pathlib
 import time
 from typing import Optional
@@ -149,7 +150,12 @@ def execute(
                 + ", following the execution without any additional packages"
             )
 
-        project_package_path = list(pathlib.Path(".").rglob("dist/*.whl"))[0]
+        project_package_path = list(pathlib.Path(".").rglob("dist/*.whl"))
+
+        # Make sure we always take the newest package (i.e. sort by time)
+        project_package_path.sort(key=os.path.getctime, reverse=True)
+        project_package_path = project_package_path[0]
+
         file_uploader.upload_file(project_package_path)
         localized_package_path = (
             f"{localized_base_path}/{str(project_package_path.as_posix())}"

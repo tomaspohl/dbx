@@ -250,6 +250,8 @@ def get_package_file() -> Optional[pathlib.Path]:
     dbx_echo("Locating package file")
     file_locator = list(pathlib.Path("dist").glob("*.whl"))
     if file_locator:
+        # Make sure we always take the newest package (i.e. sort by time)
+        file_locator.sort(key=os.path.getctime, reverse=True)
         file_path = file_locator[0]
         dbx_echo(f"Package file located in: {file_path}")
         return file_path

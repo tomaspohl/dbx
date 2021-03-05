@@ -26,7 +26,7 @@ DBX_PATH = ".dbx"
 INFO_FILE_PATH = f"{DBX_PATH}/project.json"
 LOCK_FILE_PATH = f"{DBX_PATH}/lock.json"
 DATABRICKS_MLFLOW_URI = "databricks"
-DEFAULT_DEPLOYMENT_FILE_PATH = "conf/deployment.json"
+DEFAULT_DEPLOYMENT_FILE_PATH = "config/deployment.json"
 
 
 def parse_multiple(multiple_argument: List[str]) -> Dict[str, str]:
